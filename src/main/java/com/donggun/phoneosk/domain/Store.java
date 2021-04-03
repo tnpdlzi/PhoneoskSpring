@@ -16,7 +16,7 @@ public class Store {
 
     @GeneratedValue @Id
     @Column(name = "store_id")
-    private int storeId;
+    private Long storeId;
 
     private String name;
     private String address;

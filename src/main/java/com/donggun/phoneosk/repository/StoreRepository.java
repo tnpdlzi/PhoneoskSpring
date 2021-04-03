@@ -1,6 +1,5 @@
 package com.donggun.phoneosk.repository;
 
-import com.donggun.phoneosk.domain.Menu;
 import com.donggun.phoneosk.domain.Store;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

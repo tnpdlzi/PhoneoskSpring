@@ -2,6 +2,7 @@ package com.donggun.phoneosk.service;
 
 import com.donggun.phoneosk.domain.Menu;
 import com.donggun.phoneosk.domain.Store;
+import com.donggun.phoneosk.repository.StoreRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

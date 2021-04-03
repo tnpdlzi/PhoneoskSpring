@@ -1,6 +1,7 @@
 package com.donggun.phoneosk.repository;
 
 import com.donggun.phoneosk.domain.Menu;
+import com.donggun.phoneosk.domain.Store;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -21,14 +22,15 @@ public class MenuRepository {
         return em.find(Menu.class, id);
     }
 
-    public List<Menu> findAll() {
-        return em.createQuery("select m from Menu m", Menu.class) // 첫번째 JPQL, 두 번째 반환 타입
-                .getResultList(); // 조회된 결과를 result로 반환
-    }
-
     public List<Menu> findByName(String name) {
         return em.createQuery("select m from Menu m where m.menuName = :name", Menu.class)
                 .setParameter("name", name)
+                .getResultList();
+    }
+
+    public List<Menu> findByStore(Store store) {
+        return em.createQuery("select m from Menu m where m.store = :store", Menu.class)
+                .setParameter("store", store)
                 .getResultList();
     }
 
