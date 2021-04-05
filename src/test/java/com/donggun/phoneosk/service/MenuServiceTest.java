@@ -5,10 +5,12 @@ import com.donggun.phoneosk.domain.Store;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@SpringBootTest
 @Transactional
 public class MenuServiceTest {
 
@@ -19,8 +21,8 @@ public class MenuServiceTest {
     public void 메뉴추가() {
         //given
         Store store = Store.builder()
-                .name("test")
-                .address("address")
+                .name("test2")
+                .address("address2")
                 .close(2200)
                 .open(1000)
                 .phone(1010001000)
@@ -38,7 +40,7 @@ public class MenuServiceTest {
         Menu findMenu = menuService.findOne(id);
 
         //then
-        Assertions.assertThat(findMenu).isNotSameAs(menu);
+        Assertions.assertThat(findMenu).isSameAs(menu);
 
     }
 
